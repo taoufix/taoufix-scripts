@@ -5,4 +5,5 @@ if (( $# == 0)); then
     exit 1
 fi
 
-wget -qO - "http://www.coffer.com/mac_find?string=${1}" | egrep -A1 "Prefix +Vendor" | sed -n 's/.*<a .*>\(.\+\)<\/a>/\1/p'
+wget -qO - "http://api.macvendors.com/${1}"
+echo
